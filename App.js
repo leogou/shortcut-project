@@ -5,6 +5,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 import CategoryScreen from './src/screens/CategoryScreen';
 import SoftwareScreen from './src/screens/SoftwareScreen';
+import ShortCutScreen from './src/screens/ShortCutScreen';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +18,11 @@ export default function App() {
         <Stack.Screen
           name="Category"
           component={CategoryScreen}
+          options={({ route })=> ({ title: 'Catégories' })}
+        />
+        <Stack.Screen
+          name="shortCut"
+          component={ShortCutScreen}
           options={({ route })=> ({ title: 'Catégories' })}
         />
         <Stack.Screen name="Software" component={SoftwareScreen}/>

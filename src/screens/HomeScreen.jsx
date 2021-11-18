@@ -44,7 +44,9 @@ const styles = StyleSheet.create({
     marginBottom: 60,
   },
   buttonTouchCat: {
-    backgroundColor: 'red',
+    backgroundColor: '#ffc500',
+    color: 'white',
+    fontWeight: 'bold',
     alignItems: 'center',
     justifyContent: 'center',
     width: 180,
@@ -53,7 +55,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   buttonTouchSoft: {
-    backgroundColor: 'red',
+    backgroundColor: '#ffc500',
+    color: 'white',
+    fontWeight: 'bold',
     alignItems: 'center',
     justifyContent: 'center',
     width: 160,
@@ -62,7 +66,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   buttonTouchRacc: {
-    backgroundColor: 'red',
+    backgroundColor: '#ffc500',
+    color: 'white',
+    fontWeight: 'bold',
     alignItems: 'center',
     justifyContent: 'center',
     width: 300,
@@ -71,5 +77,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 30,
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
