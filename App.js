@@ -6,7 +6,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import CategoryScreen from './src/screens/CategoryScreen';
 import SoftwareScreen from './src/screens/SoftwareScreen';
 import ShortCutScreen from './src/screens/ShortCutScreen';
-
+import AddScreen from './src/screens/AddScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,9 +23,18 @@ export default function App() {
         <Stack.Screen
           name="shortCut"
           component={ShortCutScreen}
-          options={({ route })=> ({ title: 'Catégories' })}
+          options={({ route })=> ({ title: 'Raccourcis' })}
         />
-        <Stack.Screen name="Software" component={SoftwareScreen}/>
+        <Stack.Screen
+          name="Software"
+          component={SoftwareScreen}
+          options={({ route })=> ({ title: 'Logiciels' })}
+        />
+        <Stack.Screen
+          name="Add"
+          component={AddScreen}
+          options={({ route })=> ({ title: 'Créer' })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )
