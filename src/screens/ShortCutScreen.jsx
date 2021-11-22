@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function ShortCutScreen(props) {
 
@@ -21,6 +21,7 @@ export default function ShortCutScreen(props) {
                 <Text style={styles.text}>Pour Linux : {shortCut.linux}</Text>
                 <Text style={styles.text}>Context : {shortCut.context}</Text>
                 <Text style={styles.text}>Description : {shortCut.description}</Text>
+                <img src={shortCut.image}></img>
             </View>
         </View>
     )

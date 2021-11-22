@@ -8,7 +8,6 @@ export default function AddScreen(props) {
     const [software, setSoftware] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState([]);
     const [selectedSoftware, setSelectedSoftware] = useState("");
-    const [shortcuts, setShortcuts] = useState([]);
 
     const [title, onChangeTitle] = React.useState(null)
     const [windows, onChangeWindows] = React.useState(null)

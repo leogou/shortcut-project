@@ -14,7 +14,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="home" component={HomeScreen}/>
+        <Stack.Screen name="home"
+          component={HomeScreen}
+          options={({ route })=> ({ title: "Page d'accueil" })}
+        />
         <Stack.Screen
           name="Category"
           component={CategoryScreen}
