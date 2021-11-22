@@ -7,7 +7,7 @@ export default function AddScreen(props) {
     const [categories, setCategories] = useState([]);
     const [software, setSoftware] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState([]);
-    const [selectedSoftware, setSelectedSoftware] = useState([]);
+    const [selectedSoftware, setSelectedSoftware] = useState("");
     const [shortcuts, setShortcuts] = useState([]);
 
     const [title, onChangeTitle] = React.useState(null)
@@ -33,12 +33,12 @@ export default function AddScreen(props) {
   
     const categorieJsx = categories
       .sort((category1, category2) => category1.name.localeCompare(category2.name))
-      .map((category) => <Picker.Item key={category.id} label={category.name} value={category.id} />);
+      .map((category) => <Picker.Item key={category.id} label={category.name} value={category['@id']} />);
   
     const softwareJsx = software
       .sort((software1, software2) => software1.name.localeCompare(software2.name))
-      .map((software) => <Picker.Item key={software.id} label={software.name} value={software.id} />);
-  
+      .map((software) => <Picker.Item key={software.id} label={software.name} value={software['@id']} />);
+ 
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -47,11 +47,7 @@ export default function AddScreen(props) {
                 selectedValue={selectedCategory}
                 style={{ height: 70, width: 250 }, styles.picker}
                 onValueChange={function (category) {
-                fetch(process.env.API_URL + "shortcuts?categories.id=" + category)
-                    .then((response) => response.json())
-                    .then((data) => setShortcuts(data["hydra:member"]))
-                    .catch((error) => console.log(error));
-                setSelectedCategory(category);
+                    setSelectedCategory(category)
                 }}
             >
                 {categorieJsx}
@@ -61,10 +57,6 @@ export default function AddScreen(props) {
                 selectedValue={selectedSoftware}
                 style={{ height: 70, width: 250 }, styles.picker}
                 onValueChange={function (software) {
-                    fetch(process.env.API_URL + "shortcuts?software.id=" + software)
-                    .then((response) => response.json())
-                    .then((data) => setShortcuts(data["hydra:member"]))
-                    .catch((error) => console.log(error));
                     setSelectedSoftware(software);
                 }}
             >
@@ -114,19 +106,24 @@ export default function AddScreen(props) {
         >
         </TextInput>
         <TouchableOpacity
-            onPress = {
-                fetch(process.env.API_URL + "software"), {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        category: 'selectedCategory',
-                        software: 'selectedSoftware',
-                        title: 'title',
-                        windows: 'windows',
-                        linux: 'linux',
-                        macos: 'mac',
-                        context: 'context',
-                        description: 'description'
-                    })
+            onPress = {() => {
+                    fetch(process.env.API_URL + "shortcuts", {
+                        method: 'POST',
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            categories: [selectedCategory],
+                            software: selectedSoftware,
+                            title: title,
+                            windows: windows,
+                            linux: linux,
+                            macos: mac,
+                            context: context,
+                            description: description
+                        })
+                    });
                 }
             }
         >
