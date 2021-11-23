@@ -45,7 +45,7 @@ export default function CategoryScreen(props) {
       <ScrollView>
         <Picker
           selectedValue={selectedCategory}
-          style={{ height: 70, width: 250 }, styles.picker}
+          style={styles.picker}
           onValueChange={function (category) {
             fetch(process.env.API_URL + "shortcuts?categories.id=" + category)
               .then((response) => response.json())
@@ -128,6 +128,8 @@ const styles = StyleSheet.create({
   },
   picker: {
     marginBottom: 20,
+    height: 40,
+    width: 250,
   },
   card: {
     display: 'flex',
