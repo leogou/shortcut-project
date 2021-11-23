@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
+    fontWeight: 'bold',
     marginTop: 50,
     marginBottom: 60,
   },
