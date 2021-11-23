@@ -28,7 +28,7 @@ export default function CategoryScreen(props) {
       
       <Text style={styles.cardTitle}>{shortCut.title}</Text>
       <Text style={styles.btnSoftware}>{shortCut.software.name}</Text>
-      <View style={styles.categoriesContainer}>
+      <View>
         {shortCut.categories.map((category) => (
           <Text key={category.id} style={styles.btnCategory}>
             {category.name}
