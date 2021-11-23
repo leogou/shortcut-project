@@ -16,10 +16,10 @@ export default function ShortCutScreen(props) {
                 </Text>
             ))}
             <View style={styles.infosRacc}>
-                {/* <Image
-                  style={styles.image}
-                  source={{ uri: shortCut.image }}
-                /> */}
+                 {/* <Image
+                    style={styles.image}
+                    source={{ uri: ("http://shortcuts.api.pierre-jehan.com/"+shortCut.image) }}
+                  />  */}
                 <Text style={styles.text}>Pour Windows : {shortCut.windows}</Text>
                 <Text style={styles.text}>Pour Mac : {shortCut.macos}</Text>
                 <Text style={styles.text}>Pour Linux : {shortCut.linux}</Text>
