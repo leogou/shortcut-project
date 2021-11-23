@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function ShortCutScreen(props) {
 
@@ -16,6 +16,10 @@ export default function ShortCutScreen(props) {
                 </Text>
             ))}
             <View style={styles.infosRacc}>
+                {/* <Image
+                  style={styles.image}
+                  source={{ uri: shortCut.image }}
+                /> */}
                 <Text style={styles.text}>Pour Windows : {shortCut.windows}</Text>
                 <Text style={styles.text}>Pour Mac : {shortCut.macos}</Text>
                 <Text style={styles.text}>Pour Linux : {shortCut.linux}</Text>
@@ -79,5 +83,9 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       textAlign: 'center',
-    }
+    },
+    image: {
+      width: 100,
+      height: 100,
+    },
   });
