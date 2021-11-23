@@ -21,7 +21,6 @@ export default function ShortCutScreen(props) {
                 <Text style={styles.text}>Pour Linux : {shortCut.linux}</Text>
                 <Text style={styles.text}>Context : {shortCut.context}</Text>
                 <Text style={styles.text}>Description : {shortCut.description}</Text>
-                <img src={shortCut.image}></img>
             </View>
         </View>
     )
