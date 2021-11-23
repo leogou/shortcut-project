@@ -45,7 +45,7 @@ export default function SoftwareScreen(props) {
       <ScrollView>
         <Picker
           selectedValue={selectedSoftware}
-          style={{ height: 70, width: 250 }, styles.picker}
+          style={styles.picker}
           onValueChange={function (software) {
             fetch(process.env.API_URL + "shortcuts?software.id=" + software)
               .then((response) => response.json())
@@ -75,6 +75,8 @@ const styles = StyleSheet.create({
   },
   picker: {
     marginBottom: 20,
+    height: 40,
+    width: 250,
   },
   card: {
     display: 'flex',
