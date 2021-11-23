@@ -13,7 +13,7 @@ export default function SoftwareScreen(props) {
       .then((response) => response.json())
       .then((data) => setSoftware(data["hydra:member"]))
       .catch((error) => console.log(error));
-  }, []);
+  });
 
   const softwareJsx = software
     .sort((software1, software2) => software1.name.localeCompare(software2.name))

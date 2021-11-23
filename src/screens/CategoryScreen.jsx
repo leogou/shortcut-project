@@ -13,7 +13,7 @@ export default function CategoryScreen(props) {
       .then((response) => response.json())
       .then((data) => setCategories(data["hydra:member"]))
       .catch((error) => console.log(error));
-  }, []);
+  });
 
   const categorieJsx = categories
     .sort((category1, category2) => category1.name.localeCompare(category2.name))
